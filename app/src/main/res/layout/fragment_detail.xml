@@ -2,91 +2,106 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="selectedCar"
             type="com.oguzdogdu.carapp.model.ModelItem" />
     </data>
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.CountryFragment">
-
-        <ImageView
-            android:id="@+id/carImage"
+        android:background="#FFC107">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            app:srcCompat="@mipmap/ic_launcher_round"
-            android:downloadUrl="@{selectedCar.image}"
-            android:paddingTop="10dp"
-            android:scaleType="fitCenter"
-            android:minHeight="200dp"
-            android:contentDescription="TODO">
+            android:layout_height="match_parent"
+            android:layout_marginTop="85dp"
+            tools:context=".view.CountryFragment">
 
-        </ImageView>
+            <ImageView
+                android:id="@+id/carImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:contentDescription="@string/CarImage"
+                android:downloadUrl="@{selectedCar.image}"
+                android:minHeight="200dp"
+                android:paddingTop="10dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_launcher_round">
 
-        <TextView
-            android:id="@+id/carName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carImage"
-            android:text="@{selectedCar.name}"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp">
+            </ImageView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/carName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carImage"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textColor="@color/black"
+                android:text="@{selectedCar.name}"
+                android:textSize="20sp"
+                android:textStyle="bold">
 
-        <TextView
-            android:id="@+id/carPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carName"
-            android:text="@{selectedCar.price}"
-            android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp">
+            </TextView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/carPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carName"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textColor="@color/black"
+                android:text="@{selectedCar.price}"
+                android:textSize="16sp">
 
-        <TextView
-            android:id="@+id/carType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carPrice"
-            android:text="@{selectedCar.type}"
-            android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp">
+            </TextView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/carType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carPrice"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textColor="@color/black"
+                android:text="@{selectedCar.type}"
+                android:textSize="16sp">
 
-        <TextView
-            android:id="@+id/carSeat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carType"
-            android:text="@{selectedCar.seat}"
-            android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp">
+            </TextView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/carSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carType"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textColor="@color/black"
+                android:text="@{selectedCar.seat}"
+                android:textSize="16sp">
 
-        <TextView
-            android:id="@+id/carMpg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/carSeat"
-            android:text="@{selectedCar.mpg}"
-            android:textSize="16sp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp">
+            </TextView>
 
-        </TextView>
+            <TextView
+                android:id="@+id/carMpg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/carSeat"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textColor="@color/black"
+                android:text="@{selectedCar.mpg}"
+                android:textSize="16sp">
+
+            </TextView>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 </layout>

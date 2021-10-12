@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oguzdogdu.carapp.R
@@ -20,10 +19,6 @@ class FeedFragment : Fragment() {
     private lateinit var viewModel: FeedViewModel
     private val carAdapter = CarAdapter(arrayListOf())
     private lateinit var binding: FragmentFeedBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
 
     override fun onCreateView(
@@ -57,7 +52,7 @@ class FeedFragment : Fragment() {
 
     }
     private fun observeLiveData() {
-        viewModel.cars.observe(viewLifecycleOwner, Observer { cars ->
+        viewModel.cars.observe(viewLifecycleOwner, { cars ->
 
             cars?.let {
                 binding.carList.visibility = View.VISIBLE
@@ -67,7 +62,7 @@ class FeedFragment : Fragment() {
 
         })
 
-        viewModel.carError.observe(viewLifecycleOwner, Observer { error ->
+        viewModel.carError.observe(viewLifecycleOwner, { error ->
             error?.let {
                 if (it) {
                     binding.carError.visibility = View.VISIBLE
@@ -77,7 +72,7 @@ class FeedFragment : Fragment() {
             }
         })
 
-        viewModel.carLoading.observe(viewLifecycleOwner, Observer { loading ->
+        viewModel.carLoading.observe(viewLifecycleOwner, { loading ->
             loading?.let {
                 if (it) {
                     binding.carLoading.visibility = View.VISIBLE

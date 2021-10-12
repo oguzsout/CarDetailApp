@@ -18,8 +18,5 @@ class DetailViewModel(application: Application) : BaseViewModel<Any?>(applicatio
             carLiveData.value = car
 
         }
-
     }
-
-
 }

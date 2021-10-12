@@ -44,7 +44,7 @@ class FeedViewModel(application: Application) : BaseViewModel<Any?>(application)
         launch {
             val cars = CarDatabase(getApplication()).carDao().getAllCars()
             showCars(cars)
-            Toast.makeText(getApplication(),"Cars From SQLite",Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication(), "Cars From SQLite", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -55,10 +55,10 @@ class FeedViewModel(application: Application) : BaseViewModel<Any?>(application)
             carApiService.getData()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<List<ModelItem>>(){
+                .subscribeWith(object : DisposableSingleObserver<List<ModelItem>>() {
                     override fun onSuccess(t: List<ModelItem>) {
                         storeInSQLite(t)
-                        Toast.makeText(getApplication(),"Cars From API",Toast.LENGTH_LONG).show()
+                        Toast.makeText(getApplication(), "Cars From API", Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {

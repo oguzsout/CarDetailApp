@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.oguzdogdu.carapp.R
 import com.oguzdogdu.carapp.databinding.FragmentDetailBinding
@@ -18,11 +17,6 @@ class DetailFragment : Fragment() {
     private lateinit var viewModel : DetailViewModel
     private lateinit var dataBinding : FragmentDetailBinding
     private var carUuid = 0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,11 +39,11 @@ class DetailFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.carLiveData.observe(viewLifecycleOwner, Observer { car ->
+        viewModel.carLiveData.observe(viewLifecycleOwner, { car ->
             car?.let {
                 dataBinding.selectedCar = car
             }
-        } )
+        })
     }
 
 

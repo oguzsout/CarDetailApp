@@ -1,10 +1,10 @@
 package com.oguzdogdu.carapp.service
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.oguzdogdu.carapp.model.ModelItem
+
 @Dao
 interface CarDao {
 

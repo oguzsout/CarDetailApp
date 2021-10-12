@@ -11,7 +11,7 @@ import com.oguzdogdu.carapp.model.ModelItem
 import com.oguzdogdu.carapp.view.FeedFragmentDirections
 
 
-class CarAdapter(val carList: ArrayList<ModelItem>) :
+class CarAdapter(private val carList: ArrayList<ModelItem>) :
     RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
     class CarViewHolder(var viewItem: CarRowBinding) : RecyclerView.ViewHolder(viewItem.root)
 

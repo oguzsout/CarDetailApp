@@ -5,4 +5,7 @@
     <string name="search_hint" />
     <string name="app_label" />
     <string name="search" />
+    <string name="no_results">No Results!</string>
+    <string name="error_try_again">Error! Try Again</string>
+    <string name="CarImage">TODO</string>
 </resources>

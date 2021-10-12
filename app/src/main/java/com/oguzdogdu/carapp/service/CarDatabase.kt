@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.oguzdogdu.carapp.model.ModelItem
 
-@Database(entities = arrayOf(ModelItem::class),version = 1)
+@Database(entities = [ModelItem::class],version = 1)
 abstract class CarDatabase : RoomDatabase() {
     abstract fun carDao() : CarDao
 
